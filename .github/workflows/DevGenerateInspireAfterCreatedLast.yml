@@ -1,0 +1,22 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: DevGenerateInspireAfterCreatedLast
+
+on:
+  # schedule:
+  #  - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  script:
+    environment: DEV
+    env:
+      INSPIRE_SERVER: ${{ secrets.INSPIRE_SERVER }}
+      TYPE : inspire
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Job
+      run: cd inspire && ./app
