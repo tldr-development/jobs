@@ -1,15 +1,16 @@
 # This workflow will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
-name: DevGenerateInspireAfterCreatedLast
+name: ProdGenerateInspireAfterCreatedLast
 
 on:
-  # schedule:
-  #  - cron: '*/10 * * * *'
+  schedule:
+  # KST 9시부터 3시간 간격으로 실행, 19시를 마지막으로 실행
+  #  - cron: '0 0,3,6,9,12,15,18,21 * * *'
   workflow_dispatch:
 
 jobs:
-  script:
+  gen:
     environment: DEV
     env:
       INSPIRE_SERVER: ${{ secrets.INSPIRE_SERVER }}
@@ -20,5 +21,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Job
+    - name: Gen
+      run: cd inspire && ./app
+
+  noti:
+    environment: DEV
+    env:
+      INSPIRE_SERVER: ${{ secrets.INSPIRE_SERVER }}
+      TYPE : notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Noti
       run: cd inspire && ./app
