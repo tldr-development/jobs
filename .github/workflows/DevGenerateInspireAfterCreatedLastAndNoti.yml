@@ -1,10 +1,10 @@
 # This workflow will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
-name: ProdGenerateInspireAfterCreatedLast
+name: DevGenerateInspireAfterCreatedLastNoti
 
 on:
-  schedule:
+  # schedule:
   # KST 9시부터 3시간 간격으로 실행, 19시를 마지막으로 실행
   #  - cron: '0 0,3,6,9,12,15,18,21 * * *'
   workflow_dispatch:

@@ -4,7 +4,7 @@
 name: ProdGenerateInspireAfterCreatedLast
 
 on:
-  schedule:
+  # schedule:
   #  - cron: '*/30 * * * *'
   workflow_dispatch:
 
