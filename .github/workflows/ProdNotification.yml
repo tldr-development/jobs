@@ -14,8 +14,6 @@ jobs:
     env:
       INSPIRE_SERVER: ${{ secrets.INSPIRE_SERVER }}
       TYPE : notification
-      TIMESTAMP_AFTER : 259200
-      CONTEXT_LOCAL : '10자에서 50자 사이로 내 감정과 상태에 도움이 되는 말을 한국어로 해줘. 상담의 형태로 답변해주 는데, 직접적으로 상담이라고 언급하지는 말아줘.  문법에 맞는 문장을 사용하고 특수문자나 욕설은 사용하지 말아주세요. 최대 50자를 넘지 말아주세요.'
 
     runs-on: ubuntu-latest
     steps:
