@@ -4,8 +4,8 @@
 name: ProdNotification
 
 on:
-  schedule:
-   - cron: '* * * * *'
+  # schedule:
+   # - cron: '* * * * *'
   workflow_dispatch:
 
 jobs:
