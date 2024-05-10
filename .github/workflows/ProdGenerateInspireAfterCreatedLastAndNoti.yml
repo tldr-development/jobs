@@ -32,7 +32,7 @@ jobs:
       run: sleep 60
 
   noti:
-    nedds: sleep
+    needs: sleep
     environment: PROD
     env:
       INSPIRE_SERVER: ${{ secrets.INSPIRE_SERVER }}
