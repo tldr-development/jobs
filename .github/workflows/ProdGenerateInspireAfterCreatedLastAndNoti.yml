@@ -24,6 +24,12 @@ jobs:
     - name: Gen
       run: cd inspire && ./app
 
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sleep
+      run: sleep 60
+
   noti:
     environment: PROD
     env:
