@@ -25,12 +25,14 @@ jobs:
       run: cd inspire && ./app
 
   sleep:
+    needs: gen
     runs-on: ubuntu-latest
     steps:
     - name: Sleep
       run: sleep 60
 
   noti:
+    nedds: sleep
     environment: PROD
     env:
       INSPIRE_SERVER: ${{ secrets.INSPIRE_SERVER }}
