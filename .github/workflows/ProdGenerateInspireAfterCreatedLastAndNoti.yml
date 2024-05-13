@@ -5,7 +5,7 @@ name: ProdGenerateInspireAfterCreatedLastAndNoti
 
 on:
   schedule:
-  - cron: '0 0,3,6,9 * * *'
+  - cron: '0 0,1,2,3,4,5,6,9,10 * * *'
   # KST 9시부터 3시간 간격으로 실행, 19시를 마지막으로 실행
   workflow_dispatch:
 
